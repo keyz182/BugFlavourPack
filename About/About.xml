@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+<name>Evolution Flavour Pack</name>
+<author>Mr Samuel Streamer</author>
+	<packageId>MSS.Bug</packageId>
+	<supportedVersions>
+		<li>1.5</li>
+	</supportedVersions>
+	<description>Various Bug support.</description>
+	<loadAfter>
+		<li>oskarpotocki.vfe.insectoid2</li>
+		<li>vanillaracesexpanded.insector</li>
+        <li>mlie.bioreactor</li>
+		<li>mlie.bondagebedtorture</li>
+	</loadAfter>
+</ModMetaData>

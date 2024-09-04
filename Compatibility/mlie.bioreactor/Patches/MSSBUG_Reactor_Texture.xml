@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName="BioReactor"]/graphicData/texPath</xpath>
+        <value>
+            <texPath>Structure/InsectorMetapod</texPath>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName="BioReactor"]/graphicData/drawSize</xpath>
+        <value>
+            <drawSize>(2,2)</drawSize>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName="BioReactorCircleLarge"]/graphicData/texPath</xpath>
+        <value>
+            <texPath>Structure/InsectorMetapod</texPath>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName="BioReactorCircleLarge"]/graphicData/drawSize</xpath>
+        <value>
+            <drawSize>(3,3)</drawSize>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName="BioReactorCircleEX"]/graphicData/texPath</xpath>
+        <value>
+            <texPath>Structure/InsectorMetapod</texPath>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName="BioReactorCircleEX"]/graphicData/drawSize</xpath>
+        <value>
+            <drawSize>(4,4)</drawSize>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName="BioReactorBig"]/graphicData/texPath</xpath>
+        <value>
+            <texPath>Structure/InsectorMetapod</texPath>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName="BioReactorBig"]/graphicData/drawSize</xpath>
+        <value>
+            <drawSize>(3,3)</drawSize>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName="BioReactorEx"]/graphicData/texPath</xpath>
+        <value>
+            <texPath>Structure/InsectorMetapod</texPath>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName="BioReactorEx"]/graphicData/drawSize</xpath>
+        <value>
+            <drawSize>(4,4)</drawSize>
+        </value>
+    </Operation>
+</Patch>

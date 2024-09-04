@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="FurnitureWithQualityBase">
+    <defName>MSS_Bug_Building_Capture_Cocoon</defName>
+    <thingClass>SR.DA.Thing.Building_AdvancedBondageBed</thingClass>
+    <label>Capture Cocoon</label>
+    <description>A grotesque collection of bug matter that can quickly be used to restrain a captive in a bug hive. Due to it's restrictive shape and nature any medical treatments attempted on occupants will be significantly worsened, and occupants suffering from illness or infection will deteriorate much more rapidly when constricted within.</description>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <canOverlapZones>false</canOverlapZones>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <passability>PassThroughOnly</passability>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <graphicData>
+      <texPath>Things/Building/CaptureCocoon</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawRotated>false</drawRotated>
+      <drawSize>(4,4)</drawSize>
+      <color>(62,164,249)</color>
+      <damageData>
+        <rect>(0,0.05,1,1.95)</rect>
+      </damageData>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+        </linkableFacilities>
+      </li>
+      <li Class="CompProperties_Usable">
+        <compClass>SR.DA.Component.CompUsableAdvancedBondageBed</compClass>
+        <useJob>SR_Job_BondageBed</useJob>
+        <useLabel>bound</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>SR.DA.Component.CompEffectBondageBed</compClass>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>SR.DA.Component.CompRemoveEffectBondageBed</compClass>
+      </li>
+      <li Class="CompProperties_AssignableToPawn">
+        <drawAssignmentOverlay>false</drawAssignmentOverlay>
+        <compClass>CompAssignableToPawn</compClass>
+      </li>
+    </comps>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <Beauty>1</Beauty>
+      <WorkToBuild>800</WorkToBuild>
+      <Mass>30</Mass>
+      <BedRestEffectiveness>0.4</BedRestEffectiveness>
+      <Comfort>0.25</Comfort>
+      <ImmunityGainSpeedFactor>0.7</ImmunityGainSpeedFactor>
+      <SurgerySuccessChanceFactor>0.7</SurgerySuccessChanceFactor>
+    </statBases>
+    <size>(1,2)</size>
+    <costList>
+      <ComponentIndustrial>1</ComponentIndustrial>
+      <InsectJelly>150</InsectJelly>
+      <Steel>50</Steel>
+    </costList>
+    <building>
+      <bed_showSleeperBody>false</bed_showSleeperBody>
+      <bed_healPerDay>4</bed_healPerDay>
+    </building>
+    <fillPercent>0.4</fillPercent>
+    <pathCost>60</pathCost>
+    <staticSunShadowHeight>0.17</staticSunShadowHeight>
+    <castEdgeShadows>True</castEdgeShadows>
+    <designationHotKey>Misc2</designationHotKey>
+    <techLevel>Industrial</techLevel>
+    <researchPrerequisites>
+      <li>VFEI2_StandardHivetech</li>
+    </researchPrerequisites>
+    <uiIconScale>0.90</uiIconScale>
+  </ThingDef>
+</Defs>

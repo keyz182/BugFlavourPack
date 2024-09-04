@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<loadFolders>
+	<v1.5>
+		<li>Common</li>
+		<li>1.5</li>
+		<li IfModActive="mlie.bioreactor">Compatibility/mlie.bioreactor</li>
+		<li IfModActive="mlie.bondagebedtorture">Compatibility/mlie.bondagebedtorture</li>
+	</v1.5>
+</loadFolders>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef Class="BioReactor.BioReactorDef" Name="BugReactorBase" ParentName="BuildingBase" Abstract="True">
+    <defName>BugReactorBase</defName>
+    <label>Human-Jelly Generator</label>
+    <description>A grotesque insectoid bio-mechanical power plant that hijacks the human metabolic systems to convert insect jelly into usable power. Must have a captive contained within and be refueled frequently with jelly. Immune to breakdowns.</description>
+    <thingClass>BioReactor.Building_BioReactor</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <altitudeLayer>Pawn</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>25</pathCost>
+    <blockWind>true</blockWind>
+    <fillPercent>0.8</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <statBases>
+      <Flammability>0.6</Flammability>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <designationCategory>Power</designationCategory>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,2)</interactionCellOffset>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <inspectorTabs>
+      <li>BioReactor.ITab_CustomRefuel</li>
+    </inspectorTabs>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <fixedStorageSettings>
+        <priority>Critical</priority>
+        <filter>
+          <categories>
+            <li>AnimalProductRaw</li>
+          </categories>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <priority>Critical</priority>
+        <filter>
+          <categories>
+            <li>AnimalProductRaw</li>
+          </categories>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Flickable" />
+      <!-- <li Class="CompProperties_Breakdownable" /> -->
+    </comps>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <researchPrerequisites>
+        <li>BiofuelRefining</li>
+        <li>VFEI2_StandardHivetech</li>
+    </researchPrerequisites>
+    <destroyable>true</destroyable>
+    <rotatable>false</rotatable>
+  </ThingDef>
+  <ThingDef Class="BioReactor.BioReactorDef" Name="BugReactorCircleBase" ParentName="BugReactorBase" Abstract="True">
+    <designatorDropdown>BugReactor_CircleType</designatorDropdown>
+    <uiIconPath>Structure/InsectorMetapod</uiIconPath>
+    <uiIconOffset>(0, 0)</uiIconOffset>
+    <uiIconScale>1.0</uiIconScale>
+  </ThingDef>
+  <!-- 2X2 Size, most likely only size -->
+  <ThingDef Class="BugReactor.BioReactorDef" ParentName="BugReactorCircleBase">
+    <defName>BugReactor</defName>
+    <label>Human-Jelly Generator</label>
+    <graphicData>
+      <texPath>Things/Building/mss_bugpodtop</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2, 2)</drawSize>
+      <drawRotated>false</drawRotated>
+    </graphicData>
+    <statBases>
+      <WorkToBuild>2800</WorkToBuild>
+      <MaxHitPoints>120</MaxHitPoints>
+    </statBases>
+    <size>(2,2)</size>
+    <costList>
+      <Steel>75</Steel>
+      <InsectJelly>150</InsectJelly>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>BioReactor.CompBioPowerPlant</compClass>
+        <basePowerConsumption>-800</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Refuelable">
+        <compClass>BioReactor.CompBioRefuelable</compClass>
+        <fuelConsumptionRate>5.0</fuelConsumptionRate>
+        <fuelCapacity>50.0</fuelCapacity>
+        <fuelFilter>
+          <categories>
+            <li>AnimalProductRaw</li>
+          </categories>
+        </fuelFilter>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>2</glowRadius>
+        <glowColor>(76,153,0,0)</glowColor>
+      </li>
+      <li Class="BioReactor.CompProperties_SecondLayer">
+        <graphicData>
+          <texPath>Structure/InsectorMetapod</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+          <drawSize>(2,2)</drawSize>
+          <drawRotated>false</drawRotated>
+        </graphicData>
+        <offset>(0,0,0)</offset>
+        <altitudeLayer>LayingPawn</altitudeLayer>
+      </li>
+    </comps>
+    <innerDrawOffset>(0, -0.05, 0.62)</innerDrawOffset>
+    <waterDrawCenter>(0, 0.25, 0.62)</waterDrawCenter>
+    <waterDrawSize>(1.6, 1.18)</waterDrawSize>
+    <bodySizeMin>0</bodySizeMin>
+    <bodySizeMax>1.5</bodySizeMax>
+  </ThingDef>
+  <DesignatorDropdownGroupDef>
+    <defName>BugReactor_CircleType</defName>
+  </DesignatorDropdownGroupDef>
+</Defs>
